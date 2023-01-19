@@ -143,16 +143,12 @@ def shortest_path(source, target):
         neighbors = neighbors_for_person(current_node.state)
 
         for neighbor_movie, neighbor_id in neighbors:
-            if not goal_test(neighbor_id, target):  # and not neighbor_id in checked_nodes
+            if not goal_test(neighbor_id, target):
                 frontier.add(Node(neighbor_id, current_node, None))
             else:
                 loop = False
                 target_node.parent = Node(neighbor_id, current_node, None)
                 break
-
-
-
-    
 
     if target_node.parent == None:
         return None
@@ -247,7 +243,7 @@ if __name__ == "__main__":
         'directory',
         help='load the data files from this directory, defaults to "large"',
         nargs="?",
-        default="small") #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! vaihda takaisin large
+        default="small")
     parser.add_argument(
         "-q", "--quiet",
         help="disable user prompts and other extra output (used by the grader)",
