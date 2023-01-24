@@ -169,7 +169,7 @@ def max_value(board):
     values = []
     recorded_actions = []
     for action in actions(board):
-        v, temp = minimax_recursion(result(board, action))
+        v, _ = minimax_recursion(result(board, action))
         values.append(v)
         recorded_actions.append(action)
     max_value = max(values)
@@ -180,7 +180,7 @@ def min_value(board):
     values = []
     recorded_actions = []
     for action in actions(board):
-        v, temp = minimax_recursion(result(board, action))
+        v, _ = minimax_recursion(result(board, action))
         values.append(v)
         recorded_actions.append(action)
     min_value = min(values)
